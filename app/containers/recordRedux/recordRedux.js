@@ -2,7 +2,7 @@ import React from 'react'
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as Action from './actions'
-import './style.scss'
+// import './style.scss'
 import RecordReduxItem from './recordReduxItem'
 import { getData, saveData } from './helpers';
 // State

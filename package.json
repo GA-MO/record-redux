@@ -1,6 +1,6 @@
 {
   "name": "record-redux",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "description": "Record data in reducer",
   "main": "lib/index.js",
   "repository": {
@@ -28,7 +28,8 @@
   "scripts": {
     "dev": "better-npm-run dev",
     "build": "npm run clean && better-npm-run build",
-    "build:lib": "npm run build && babel --copy-files --out-dir lib --ignore *.test.js app/containers/recordRedux",
+    "build:lib": "cross-env BABEL_ENV=production babel app/containers/recordRedux --out-dir lib",
+    "build:all": "npm run build && npm run build:lib",
     "deploy": "npm version patch && npm publish",
     "clean": "better-npm-run clean",
     "test": "better-npm-run test"
@@ -50,7 +51,7 @@
       "command": "mocha ./test/*.js --compilers js:babel-register --watch"
     },
     "clean": {
-      "command": "rimraf dist"
+      "command": "rimraf lib"
     }
   },
   "devDependencies": {
@@ -100,5 +101,10 @@
     "webpack-dev-middleware": "^1.2.0",
     "webpack-dev-server": "^1.14.0",
     "webpack-hot-middleware": "^2.2.0"
+  },
+  "peerDependencies": {
+    "react": "^15.4.1",
+    "redux": "^3.2.1",
+    "react-redux": "^4.2.1"
   }
 }

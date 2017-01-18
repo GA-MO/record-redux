@@ -1,2 +1,4 @@
-export recordReduxMiddleware from './recordReduxMiddleware';
-export RecordRedux from './recordRedux';
+import recordReduxMiddleware from './recordReduxMiddleware';
+import RecordRedux from './recordRedux';
+
+export { recordReduxMiddleware, RecordRedux };

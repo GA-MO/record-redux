@@ -1,0 +1,58 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js publish
+
+PATH: 
+  C:\ProgramData\Oracle\Java\javapath;C:\Program Files (x86)\Intel\iCLS Client\;C:\Program Files\Intel\iCLS Client\;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;C:\Program Files\Intel\WiFi\bin\;C:\Program Files\Common Files\Intel\WirelessCommon\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\nodejs\;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\Users\Fuckdev\Downloads\php-5.6.25-nts-Win32-VC11-x64;C:\ProgramData\ComposerSetup\bin;C:\Program Files (x86)\Yarn\bin;C:\apache-maven-3.3.9\bin;%{JAVA_HOME}\bin;%{JAVA_HOME}\lib\dt.jar;%{JAVA_HOME}\lib\tools.jar;C:\Users\Fuckdev\AppData\Roaming\npm;C:\Users\Fuckdev\AppData\Local\atom\bin;C:\Users\Fuckdev\AppData\Local\Microsoft\WindowsApps;C:\Users\Fuckdev\AppData\Roaming\Composer\vendor\bin;C:\Users\Fuckdev\AppData\Local\Yarn\.bin;
+
+Yarn version: 
+  0.16.1
+
+Node version: 
+  5.2.0
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "record-redux",
+    "version": "1.0.0",
+    "description": "Record data in reducer",
+    "main": "index.js",
+    "repository": {
+      "url": "https://github.com/GA-MO/record-redux.git",
+      "type": "git"
+    },
+    "author": "Thawatchai Kuansombat (thawatchai.deartk@gmail.com)",
+    "license": "MIT",
+    "keywords": ["record", "replay", "redux"],
+    "homepage": "https://my-new-project-website.com",
+    "bugs": "https://github.com/GA-MO/record-redux/issues",
+    "files": [
+      "index.js",
+      "*.js",
+      "*.scss"
+    ]
+  }
+
+yarn manifest: 
+  No manifest
+
+bower manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: https://registry.yarnpkg.com/record-redux: "You cannot publish over the previously published version 1.0.0."
+      at Request.params.callback [as _callback] (C:\Program Files (x86)\Yarn\lib\util\request-manager.js:294:18)
+      at Request.self.callback (C:\Program Files (x86)\Yarn\node_modules\request\request.js:187:22)
+      at emitTwo (events.js:88:13)
+      at Request.emit (events.js:173:7)
+      at Request.<anonymous> (C:\Program Files (x86)\Yarn\node_modules\request\request.js:1048:10)
+      at emitOne (events.js:78:13)
+      at Request.emit (events.js:170:7)
+      at Gunzip.<anonymous> (C:\Program Files (x86)\Yarn\node_modules\request\request.js:969:12)
+      at emitNone (events.js:73:20)
+      at Gunzip.emit (events.js:167:7)

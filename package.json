@@ -1,0 +1,24 @@
+{
+  "name": "record-redux",
+  "version": "1.0.1",
+  "description": "Record data in reducer",
+  "main": "index.js",
+  "repository": {
+    "url": "https://github.com/GA-MO/record-redux.git",
+    "type": "git"
+  },
+  "author": "Thawatchai Kuansombat (thawatchai.deartk@gmail.com)",
+  "license": "MIT",
+  "keywords": [
+    "record",
+    "replay",
+    "redux"
+  ],
+  "homepage": "https://my-new-project-website.com",
+  "bugs": "https://github.com/GA-MO/record-redux/issues",
+  "files": [
+    "index.js",
+    "*.js",
+    "*.scss"
+  ]
+}

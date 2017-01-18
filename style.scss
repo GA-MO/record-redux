@@ -1,0 +1,138 @@
+.box-record-redux{
+	width: 400px;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #333;
+	padding: 10px;
+	color: #fff;
+	z-index: 10;
+	box-shadow: 0px 0 150px rgba(0, 0, 0, 0.5);
+	transform: translateX(100%);
+	transition: all 0.3s ease-in-out;
+	&.active{
+		transform: translateX(0);
+	}
+	.input{
+		line-height: 14px;
+	  height: 34px;
+	  border-radius: 3px;
+	  width: 100%;
+	  padding: 6px 12px;
+	  color: #000;
+	  font-size: 14px;
+	  line-height: 14px;
+	  background: #fff;
+	  // box-shadow: none;
+	  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	  border: 1px solid #eee;
+	}
+}
+.toggle-record{
+	position: absolute;
+  top: 10px;
+  padding: 20px 20px;
+  left: -97px;
+  background: #d00000;
+  border-radius: 10px 0 0 10px;
+  cursor: pointer;
+  box-shadow: 0px 0 150px rgba(0, 0, 0, 0.5);
+}
+.box-record-list{
+	height: 80vh;
+	overflow: auto;
+}
+.record-redux-item{
+	border-bottom: 1px solid #222;
+	position: relative;
+	padding-right: 120px;
+	>div{
+		display: inline-block;
+		padding: 10px;
+	}
+	.box-action-record{
+		position: absolute;
+		right: 0;
+		top: 0;
+		width: 120px;
+		padding: 2px;
+		text-align: right;
+		.btn{
+			display: inline-block;
+	    cursor: pointer;
+	    padding: 5px 10px;
+	    border: 1px solid #4f4f4f;
+	    border-radius: 3px;
+	    margin: 2px;
+	    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.33);
+			&:hover{
+				color: #fff;
+			}
+			&.red{
+				background: #d00000;
+			}
+		}
+	}
+}
+.record-bar{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	padding: 3px;
+	.actions-list{
+		@extend %actions-list;
+	}
+	.box-input-filename{
+		@extend %box-input-filename;
+	}
+}
+%actions-list{
+	padding: 0;
+	margin: 0;
+	letter-spacing: -0.33em;
+	display: block;
+	li{
+		width: 50%;
+		letter-spacing: normal;
+		display: inline-block;
+		background: #ccc;
+		padding: 10px 20px;
+		color: #333;
+		cursor: pointer;
+		text-align: center;
+		border: 3px solid #333;
+	}
+}
+
+%box-input-filename{
+	text-align: left;
+	display: inline-block;
+	background: #333;
+	width: 150px;
+	padding: 10px;
+	input{
+		display: block;
+		width: 100%;
+		padding: 10px;
+		border: 1px solid #333;
+	}
+	button{
+		display: block;
+		border: none;
+		outline: none;
+		background: #ccc;
+		padding: 10px;
+		border: 1px solid #333;
+		color: #333;
+		width: 100%;
+	}
+}
+
+#uploadJSONRecordRedux{
+	padding: 0 3px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+}

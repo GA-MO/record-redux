@@ -8,7 +8,7 @@ $ npm install --save-dev record-redux
 
 # Config middleware
 
-```
+```js
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
 import createLogger from 'redux-logger'
@@ -33,7 +33,8 @@ export default (history) => {
 ```
 
 # Config UI Component
-```
+
+```js
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import configureStore from 'store/configureStore'

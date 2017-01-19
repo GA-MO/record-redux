@@ -12,12 +12,17 @@ const recordData = (name, data) => {
   saveData(name, datas)
 }
 
-export default store => dispatch => action => {
+export default store => next => action => {
   if (action.type === 'RECORD_REDUX') {
     saveData('RECORDING', action.mode)
   } else if (getData('RECORDING') === 'recording') {
     const name = getData('RECORD_CURRENT')
     recordData(name, action)
   }
-  return dispatch(action);
+  
+  if (typeof action === 'function') {
+    return action(store.dispatch, store.getState);
+  }
+
+  return next(action);
 }

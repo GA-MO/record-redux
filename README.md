@@ -48,7 +48,7 @@ export default class Root extends Component {
     return (
       <Provider store={store} key="provider">
         <App />
-        <RecordRedux /> // Add UI component
+        <RecordRedux maxDelay={100} /> // Add UI component
       </Provider>
     )
   }

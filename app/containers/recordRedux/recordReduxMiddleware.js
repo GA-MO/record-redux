@@ -1,4 +1,4 @@
-import { getData, saveData } from './helpers';
+import { getData, saveData } from './helpers'
 
 saveData('RECORDING', 'stop')
 saveData('RECORD_CURRENT', '')
@@ -12,17 +12,22 @@ const recordData = (name, data) => {
   saveData(name, datas)
 }
 
+let lastTime = 0
+
 export default store => next => action => {
   if (action.type === 'RECORD_REDUX') {
     saveData('RECORDING', action.mode)
   } else if (getData('RECORDING') === 'recording') {
     const name = getData('RECORD_CURRENT')
+    const now = new Date()
+    action.delay = (now - lastTime)
     recordData(name, action)
-  }
-  
-  if (typeof action === 'function') {
-    return action(store.dispatch, store.getState);
+    lastTime = now
   }
 
-  return next(action);
+  if (typeof action === 'function') {
+    return action(store.dispatch, store.getState)
+  }
+
+  return next(action)
 }

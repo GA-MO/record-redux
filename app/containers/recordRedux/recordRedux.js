@@ -26,8 +26,12 @@ function mapDispatchToProps(dispatch) {
 @connect(mapStateToProps, mapDispatchToProps)
 export default class RecordRedux extends React.Component {
   static propTypes = {
-    // name: React.PropTypes.string,
+    maxDelay: React.PropTypes.number,
   };
+
+  static defaultProps = {
+    maxDelay: 10000,
+  }
 
   state = {
     show: false,
@@ -35,6 +39,7 @@ export default class RecordRedux extends React.Component {
   }
 
   componentDidMount = () => {
+    saveData('MAX_DELAY', this.props.maxDelay);
     const recordData = getData('RECORD_NAME_LIST');
     this.setState({
       recordCount: recordData.length,
@@ -119,7 +124,8 @@ export default class RecordRedux extends React.Component {
         />
         <div className="box-record-list">
           {
-            recordList.map((record) => <RecordReduxItem
+            recordList.map((record, i) => <RecordReduxItem
+              key={`${record}-${i}`}
               recordName={record}
               replayRecord={() => actions.replayRecord(record)}
               deleteRecord={() => this.deleteRecord(record)}

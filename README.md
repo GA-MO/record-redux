@@ -1,5 +1,5 @@
 # record-redux
-record your redux stores
+Record your action to redux stores [live demo](https://ga-mo.github.io/record-redux/)
 
 # Installation
 ```
@@ -13,7 +13,7 @@ import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
 import rootReducer from '../reducers'
-import { recordReduxMiddleware } from 'record-redux'
+import { recordReduxMiddleware } from 'record-redux' // import middleware
 
 export default (history) => {
   const middlewares = [

@@ -6,14 +6,17 @@ module.exports = {
   // devtool: 'source-map',
   // entry: './app/index.js',
   entry: {
-    app: [
+    style: [
       path.join(__dirname, 'app/index.js'),
+      './css/base/_css-reset.scss',
+      './app/containers/recordRedux/style.scss',
     ],
     vendor: [
       'react',
       'react-dom',
       'react-redux',
       'redux',
+      './css/style.scss',
     ],
   },
 
@@ -43,7 +46,10 @@ module.exports = {
       minimize: true,
     }),
     new webpack.NoErrorsPlugin(),
-    new ExtractTextPlugin('style.css'),
+    // new ExtractTextPlugin('style.css'),
+    new ExtractTextPlugin('[name].css', {
+      allChunks: true,
+    }),
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       minChunks: Infinity,

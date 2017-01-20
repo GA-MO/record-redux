@@ -3,8 +3,9 @@ import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
 import Root from './containers/Root'
 // CSS
-import '../css/base/_css-reset.scss'
-import 'containers/recordRedux/style.scss'
+// import '../css/base/_css-reset.scss'
+// import '../css/style.scss'
+// import 'containers/recordRedux/style.scss'
 
 
 const rootEl = document.getElementById('app')

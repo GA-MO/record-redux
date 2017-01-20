@@ -13,6 +13,9 @@ module.exports = {
       // listen to code updates emitted by hot middleware:
       'webpack-hot-middleware/client',
       './app/index',
+      './css/base/_css-reset.scss',
+      './app/containers/recordRedux/style.scss',
+      './css/style.scss',
     ],
   },
   output: {

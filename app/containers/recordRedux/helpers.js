@@ -29,6 +29,10 @@ export const saveData = (name, data) => {
   window.localStorage.setItem(name, JSON.stringify(data))
 }
 
+export const deleteData = (name) => {
+  window.localStorage.removeItem(name)
+}
+
 export const getRecordAll = () => {
   const recordNameList = getData('RECORD_NAME_LIST')
   return recordNameList.map((name) => {

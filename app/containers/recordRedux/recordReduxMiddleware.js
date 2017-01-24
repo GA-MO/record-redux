@@ -1,10 +1,19 @@
-import { getData, saveData } from './helpers'
+import { getData, saveData, deleteData } from './helpers'
 
 saveData('RECORDING', 'stop')
 saveData('RECORD_CURRENT', '')
 if (getData('RECORD_NAME_LIST') === null) {
   saveData('RECORD_NAME_LIST', [])
 }
+
+const recordNameList = getData('RECORD_NAME_LIST')
+const listKeyBase = ['RECORDING', 'RECORD_CURRENT', 'RECORD_NAME_LIST', 'MAX_DELAY']
+for (const key in window.localStorage) {
+  if (recordNameList.indexOf(key) === -1 && listKeyBase.indexOf(key) === -1) {
+    deleteData(key)
+  }
+}
+
 
 const recordData = (name, data) => {
   const datas = getData(name)

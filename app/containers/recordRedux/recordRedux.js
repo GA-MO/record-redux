@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 import * as Action from './actions'
 // import './style.scss'
 import RecordReduxItem from './recordReduxItem'
-import { getData, saveData } from './helpers';
+import { getData, saveData, deleteData } from './helpers';
 // State
 function mapStateToProps(state) {
   return {
@@ -75,6 +75,7 @@ export default class RecordRedux extends React.Component {
     let recordList = getData('RECORD_NAME_LIST')
     recordList = recordList.filter(record => record !== name)
     saveData('RECORD_NAME_LIST', recordList)
+    deleteData(name)
     this.setState({
       recordCount: this.state.recordCount - 1,
     })
@@ -96,7 +97,7 @@ export default class RecordRedux extends React.Component {
 
       saveData('RECORD_NAME_LIST', nameListFile)
       for (let i = 0; i < dataFile.length; i++) {
-        saveData(dataFile[i].recordname, dataFile[i].record)
+        saveData(dataFile[i].recordName, dataFile[i].record)
       }
 
       const recordData = getData('RECORD_NAME_LIST');

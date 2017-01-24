@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+require('babel-polyfill');
 
 module.exports = {
   // or devtool: 'eval' to debug issues with compiled output:
@@ -8,6 +9,7 @@ module.exports = {
   entry: {
     bundle: [
       // necessary for hot reloading with IE:
+      'babel-polyfill',
       'eventsource-polyfill',
       'react-hot-loader/patch',
       // listen to code updates emitted by hot middleware:

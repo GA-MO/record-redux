@@ -1,6 +1,6 @@
 {
   "name": "record-redux",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Record data in reducer",
   "main": "lib/index.js",
   "repository": {

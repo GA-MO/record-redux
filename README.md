@@ -1,5 +1,5 @@
 # record-redux
-Record your action to redux stores [live demo](https://ga-mo.github.io/record-redux/)
+Record your action to local storage [live demo](https://ga-mo.github.io/record-redux/)
 
 # Installation
 ```

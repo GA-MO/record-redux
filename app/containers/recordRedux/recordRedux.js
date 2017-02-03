@@ -35,6 +35,8 @@ export default class RecordRedux extends React.Component {
 
   state = {
     show: false,
+    mode: 'recording',
+    recordNameActive: '',
     recordCount: 0,
   }
 
@@ -46,10 +48,35 @@ export default class RecordRedux extends React.Component {
     })
   }
 
-  togglePanal = (mode) => {
+  togglePanal = () => {
     this.setState({
       show: !this.state.show,
     })
+  }
+
+  toggleMode = (name) => {
+    const { recordNameActive, mode } = this.state;
+    const recordMode = mode === 'recording' ? 'stop' : 'recording';
+    if (recordNameActive === '') {
+      saveData('RECORDING', mode)
+      this.setState({
+        mode: recordMode,
+        recordNameActive: name,
+      })
+      saveData('RECORD_CURRENT', name)
+      if (getData(name) === null) {
+        saveData(name, [])
+      }
+      setTimeout(() => {
+        this.togglePanal()
+      }, 600)
+    } else if (recordNameActive === name) {
+      saveData('RECORDING', mode)
+      this.setState({
+        mode: recordMode,
+        recordNameActive: '',
+      })
+    }
   }
 
   addRecord = (e) => {
@@ -111,7 +138,7 @@ export default class RecordRedux extends React.Component {
   }
 
   render() {
-    const { show, recordCount } = this.state;
+    const { show, recordCount, recordNameActive } = this.state;
     const { actions } = this.props;
     const recordList = getData('RECORD_NAME_LIST')
     return (
@@ -128,6 +155,9 @@ export default class RecordRedux extends React.Component {
             recordList.map((record, i) => <RecordReduxItem
               key={`${record}-${i}`}
               recordName={record}
+              disabled={recordNameActive !== '' && recordNameActive !== record}
+              active={recordNameActive === record}
+              toggleMode={() => this.toggleMode(record)}
               replayRecord={() => actions.replayRecord(record)}
               deleteRecord={() => this.deleteRecord(record)}
             />)

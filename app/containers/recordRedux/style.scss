@@ -33,24 +33,39 @@
 .toggle-record{
 	position: absolute;
   top: 100px;
-  padding: 20px 20px;
-  left: -97px;
+  line-height: 10px;
+  padding: 10px 15px;
+  left: -88px;
+  width: 88px;
   background: #d00000;
-  border-radius: 10px 0 0 10px;
+  border-radius: 7px 0 0 7px;
   cursor: pointer;
   box-shadow: 0px 0 150px rgba(0, 0, 0, 0.5);
 }
 .box-record-list{
 	height: 80vh;
 	overflow: auto;
+	margin-top: 5px;
 }
 .record-redux-item{
-	border-bottom: 1px solid #222;
+	border-bottom: 1px solid #292929;
 	position: relative;
 	padding-right: 120px;
 	>div{
 		display: inline-block;
 		padding: 10px;
+	}
+	&.disabled, &.disabled .btn{
+		opacity: 0.3;
+		cursor: no-drop !important;
+	}
+	&.active{
+		background: #4f4f4f;
+		border-radius: 5px;
+		.btn.play, .btn.delete{
+			opacity: 0.3;
+			cursor: no-drop;
+		}
 	}
 	.box-action-record{
 		position: absolute;
@@ -109,6 +124,8 @@
 		cursor: pointer;
 		text-align: center;
 		border: 3px solid #333;
+		border-radius: 5px;
+    font-weight: bold;
 	}
 }
 

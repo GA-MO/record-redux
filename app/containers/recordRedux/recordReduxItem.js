@@ -9,32 +9,32 @@ export default class recordReduxItem extends React.Component {
   };
 
   state = {
-    mode: 'recording',
+    // mode: 'recording',
   }
 
-  toggleMode = (mode, name) => {
-    saveData('RECORDING', mode)
-    const recordMode = mode === 'recording' ? 'stop' : 'recording';
-    this.setState({
-      mode: recordMode,
-    })
-    saveData('RECORD_CURRENT', name)
-    console.log('dataname', getData(name));
-    if (getData(name) === null) {
-      saveData(name, [])
-    }
-  }
+  // toggleMode = (mode, name) => {
+  //   saveData('RECORDING', mode)
+  //   const recordMode = mode === 'recording' ? 'stop' : 'recording';
+  //   this.setState({
+  //     mode: recordMode,
+  //   })
+  //   saveData('RECORD_CURRENT', name)
+  //   console.log('dataname', getData(name));
+  //   if (getData(name) === null) {
+  //     saveData(name, [])
+  //   }
+  // }
 
   render() {
     const { mode } = this.state;
-    const { recordName, replayRecord, deleteRecord } = this.props;
+    const { recordName, replayRecord, deleteRecord, active, toggleMode, disabled } = this.props;
     return (
-      <div className="record-redux-item">
+      <div className={`record-redux-item ${disabled && 'disabled'} ${active && 'active'}`}>
         <div className="item name">{recordName}</div>
         <div className="box-action-record">
-          <div className={`btn ${mode !== 'recording' && 'red'}`} onClick={() => this.toggleMode(mode, recordName)}>{mode === 'recording' ? '⬤' : '⬤'}</div>
-          <div className="btn" onClick={replayRecord}>▷</div>
-          <div className="btn" onClick={deleteRecord}>−</div>
+          <div className={`btn ${active && 'red'}`} onClick={() => toggleMode()} title={`Click to ${active ? 'stop' : 'start'} record`}>{active ? '⬤' : '⬤'}</div>
+          <div className="btn play" onClick={!disabled && !active && replayRecord}>▷</div>
+          <div className="btn delete" onClick={deleteRecord} title="Delete record">⨯</div>
         </div>
       </div>
     );

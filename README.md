@@ -47,8 +47,10 @@ export default class Root extends Component {
     const store = configureStore()
     return (
       <Provider store={store} key="provider">
-        <App />
-        <RecordRedux maxDelay={100} /> // Add UI component
+        <div>
+          <App />
+          <RecordRedux maxDelay={100} /> // Add UI component
+        </div>
       </Provider>
     )
   }

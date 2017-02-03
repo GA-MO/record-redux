@@ -1,6 +1,6 @@
 
 import React, { Component, PropTypes } from 'react';
-import { RecordRedux } from 'containers/recordRedux';
+
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 
@@ -85,7 +85,7 @@ export default class App extends React.Component {
 
     return (
       <div className="container">
-        <RecordRedux maxDelay={500} />
+        
         <br />
         <br />
         <br />

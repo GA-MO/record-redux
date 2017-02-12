@@ -15,7 +15,7 @@ import createLogger from 'redux-logger'
 import rootReducer from '../reducers'
 import { recordReduxMiddleware } from 'record-redux' // import middleware
 
-export default (history) => {
+export default () => {
   const middlewares = [
     thunk,
     createLogger(),
@@ -24,7 +24,7 @@ export default (history) => {
 
   const store = createStore(
     rootReducer,
-    applyMiddleware(...middlewares)
+    applyMiddleware(...middlewares),
   )
 
   return store

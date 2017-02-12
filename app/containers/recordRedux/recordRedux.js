@@ -30,7 +30,7 @@ export default class RecordRedux extends React.Component {
   };
 
   static defaultProps = {
-    maxDelay: 10000,
+    maxDelay: 5000,
   }
 
   state = {

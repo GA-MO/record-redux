@@ -14,7 +14,6 @@ for (const key in window.localStorage) {
   }
 }
 
-
 const recordData = (name, data) => {
   const datas = getData(name)
   datas.push(data)

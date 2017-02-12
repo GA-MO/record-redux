@@ -7,12 +7,7 @@
 3 info using node@v5.2.0
 4 info git [ 'status', '--porcelain' ]
 5 verbose stack Error: Git working directory not clean.
-5 verbose stack M README.md
-5 verbose stack M app/containers/recordRedux/recordRedux.js
-5 verbose stack M app/containers/recordRedux/recordReduxMiddleware.js
-5 verbose stack M lib/bundle.js
-5 verbose stack M lib/recordRedux.js
-5 verbose stack M lib/vendor.js
+5 verbose stack D npm-debug.log
 5 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\version.js:172:21
 5 verbose stack     at ChildProcess.exithandler (child_process.js:205:7)
 5 verbose stack     at emitTwo (events.js:88:13)
@@ -28,12 +23,7 @@
 9 error node v5.2.0
 10 error npm  v3.3.12
 11 error Git working directory not clean.
-11 error M README.md
-11 error M app/containers/recordRedux/recordRedux.js
-11 error M app/containers/recordRedux/recordReduxMiddleware.js
-11 error M lib/bundle.js
-11 error M lib/recordRedux.js
-11 error M lib/vendor.js
+11 error D npm-debug.log
 12 error If you need help, you may report this error at:
 12 error     <https://github.com/npm/npm/issues>
 13 verbose exit [ 1, true ]

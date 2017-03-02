@@ -11,14 +11,24 @@ export const saveJSON = (data, filename) => {
   }
 
   const blob = new Blob([data], { type: 'text/json' });
-  const e = document.createEvent('MouseEvents');
-  const a = document.createElement('a');
 
-  a.download = filename
-  a.href = window.URL.createObjectURL(blob)
-  a.dataset.downloadurl =  ['text/json', a.download, a.href].join(':')
-  e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
-  a.dispatchEvent(e)
+  // check browser type
+  const isIE = false || !!document.documentMode;
+  const isEdge = !isIE && !!window.StyleMedia;
+
+  // create link and popup download file dialog
+  if (isIE || isEdge) {
+    window.navigator.msSaveBlob(blob, filename);
+  } else {
+    const e = document.createEvent('MouseEvents');
+    const a = document.createElement('a');
+
+    a.download = filename
+    a.href = window.URL.createObjectURL(blob)
+    a.dataset.downloadurl =  ['text/json', a.download, a.href].join(':')
+    e.initMouseEvent('click', true, false, window, 0, 0, 0, 0, 0, false, false, false, false, 0, null)
+    a.dispatchEvent(e)
+  }
 };
 
 export const getData = (name) => {
